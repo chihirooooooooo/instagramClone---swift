@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1016673462377-0tjtal00vj6i5bb3dbt3gnib20h73grb.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1016673462377-0tjtal00vj6i5bb3dbt3gnib20h73grb</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBeaQrrPAOtakoVVeoUBwlZS6R0LLfjVk0</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1016673462377</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>chihiro.instagramClone</string>
+	<key>PROJECT_ID</key>
+	<string>instagramswiftui-feb4f</string>
+	<key>STORAGE_BUCKET</key>
+	<string>instagramswiftui-feb4f.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1016673462377:ios:77c6408ca61cc8776b5af8</string>
+</dict>
+</plist>
