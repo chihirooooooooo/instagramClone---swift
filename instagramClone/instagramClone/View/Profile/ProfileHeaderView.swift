@@ -6,12 +6,14 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct ProfileHeaderView: View {
+    @ObservedObject var viewModel : ProfileViewModel
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                Image("bart")
+                KFImage(URL(string: viewModel.user.profileImageUrl))
                     .resizable()
                     .scaledToFill()
                     .frame(width: 80, height: 80)
@@ -21,26 +23,28 @@ struct ProfileHeaderView: View {
                 Spacer()
                 
                 HStack(alignment: .center, spacing: 16) {
-                    UserStatView(value: 3, title: "Posts")
-                    UserStatView(value: 2, title: "Followers")
-                    UserStatView(value: 1, title: "Following")
+                    UserStatView(value: viewModel.user.stats?.posts ?? 0, title: "Posts")
+                    UserStatView(value: viewModel.user.stats?.followers ?? 0 , title: "Followers")
+                    UserStatView(value: viewModel.user.stats?.following ?? 0, title: "Following")
                 }.padding(.trailing, 32)
             }
             
-            Text("Bart Simpson")
+            Text(viewModel.user.fullname)
                 .font(.system(size: 15, weight: .semibold))
                 .padding([.leading, .top])
             
-            Text("Student at Springfield Elementary School")
-                .font(.system(size: 15))
-                .padding(.leading)
-                .padding(.top, 1)
+            if let bio = viewModel.user.bio {
+                Text(bio)
+                    .font(.system(size: 15))
+                    .padding(.leading)
+                    .padding(.top, 1)
+            }
             
             HStack {
                 
                 Spacer()
                 
-                ProfileActionButtonView()
+                ProfileActionButtonView(viewModel: viewModel)
                 
                 Spacer()
             }.padding(.top)
@@ -53,8 +57,8 @@ struct ProfileHeaderView: View {
 
 
 
-struct ProfileHeaderView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProfileHeaderView()
-    }
-}
+//struct ProfileHeaderView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ProfileHeaderView()
+//    }
+//}

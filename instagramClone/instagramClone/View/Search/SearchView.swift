@@ -11,7 +11,7 @@ struct SearchView: View {
     
     @State var searchText = ""
     @State var inSearchMode = false
-    
+    @ObservedObject var viewModel = SearchViewModel()
     var body: some View {
         ScrollView{
             SearchBar(text: $searchText, isEditing: $inSearchMode)
@@ -19,9 +19,9 @@ struct SearchView: View {
             
             ZStack {
                 if inSearchMode {
-                    UserListView()
+                    UserListView(viewModel: viewModel, searchText: $searchText)
                 }else {
-                    PostGridView()
+                    PostGridView(config: .explore)
                 }
             }
             
@@ -29,8 +29,8 @@ struct SearchView: View {
     }
 }
 
-struct SearchView_Previews: PreviewProvider {
-    static var previews: some View {
-        SearchView()
-    }
-}
+//struct SearchView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SearchView()
+//    }
+//}

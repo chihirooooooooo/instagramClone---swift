@@ -101,12 +101,6 @@ struct RegistrationView: View {
                 
                 Spacer()
                 
-                NavigationLink {
-                    RegistrationView()
-                } label: {
-                    
-                }.padding(.bottom, 16)
-                
                 Button {
                     mode.wrappedValue.dismiss()
                 } label: {
